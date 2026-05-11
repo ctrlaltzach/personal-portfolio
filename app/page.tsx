@@ -169,7 +169,7 @@ export default function Home() {
                 <li>Worked collaboratively with other developers in an Agile environment, building efficiently and integrating business-user feedback seamlessly</li>
                 <li>Employed Palantir Foundry to build AI agents, Ontology data infrastructure, and construct frontend solutions</li>
                 <li>Utilized AWS Step Functions, Glue, Lambda, and CloudWatch to orchestrate and troubleshoot data operations</li>
-                <li>Led initiatives to decommission unused AWS & Foundry resources</li>
+                <li>Led initiatives to decommission unused AWS & Foundry compute resources</li>
               </ul>
             </div>
 
