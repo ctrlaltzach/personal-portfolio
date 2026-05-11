@@ -165,7 +165,7 @@ export default function Home() {
               </div>
               <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li>Conducted quantitative research through MTSU's Business and Economic Research Center (BERC)</li>
-                <li>Focus: Urban Physical Environments in Tennessee - Impact on Mental Distress & Mental Health Providers</li>
+                <li>Focus: Availability of Clinical Services (relating to Mental Health) in Tennessee</li>
               </ul>
             </div>
           </div>
