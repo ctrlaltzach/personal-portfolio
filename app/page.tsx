@@ -5,7 +5,7 @@ export default function Home() {
       <nav className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-slate-800">Michael (Zach) Burgess</h1>
+            <h1 className="text-2xl font-bold text-slate-800">Zach Burgess</h1>
             <div className="flex gap-6">
               <a href="#about" className="text-slate-600 hover:text-slate-900">About</a>
               <a href="#experience" className="text-slate-600 hover:text-slate-900">Experience</a>
@@ -32,14 +32,14 @@ export default function Home() {
     {/* Bio Content - Right 3/4 */}
     <div className="w-full md:w-3/4">
       <h2 className="text-4xl font-bold text-slate-900 mb-3">
-        Hi, I'm Zach.
+        Hey! I'm Zach
       </h2>
       <p className="text-xl text-slate-700 mb-2 font-semibold">
         Data Solutions Engineer
       </p>
       <p className="text-lg text-slate-600 mb-6 leading-relaxed">
         I specialize in data engineering, cloud solutions, and GenAI applications, 
-        currently building enterprise data architectures at Fortitude Re.
+        currently building at Fortitude Re.
       </p>
       <div className="flex flex-wrap gap-4">
         <a 
@@ -74,14 +74,14 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <p className="text-slate-700 mb-4">
-                I'm a Data Solutions Engineer with a passion for building scalable data 
-                infrastructure and leveraging cutting-edge technologies to solve complex 
-                business problems. On the side, I work on pursuing my Master's in 
-                Computer Science at the University of Tennessee, Knoxville.
+                I'm a Data Engineer with interests in building strong & scalable data 
+                infrastructure while leveraging cutting-edge technologies to solve problems. 
+                On the side, I work on pursuing my Master's in Computer Science 
+                at the University of Tennessee, Knoxville.
               </p>
               <p className="text-slate-700">
                 My experience spans data engineering, cloud computing, and GenAI applications, 
-                with a strong foundation in both analytics and software development.
+                with academic foundations in both analytics and software development.
               </p>
             </div>
             <div>
@@ -115,8 +115,10 @@ export default function Home() {
                 <span className="text-slate-600">Jan 2026 – Present</span>
               </div>
               <ul className="list-disc list-inside space-y-2 text-slate-700">
-                <li>Employed Palantir Foundry Applications to construct intricate enterprise data architecture solutions</li>
-                <li>Utilized AWS Step Functions, Glue, Lambda, and CloudWatch to orchestrate and view data operations</li>
+                <li>Worked collaboratively with other developers in an Agile environment, building efficiently and integrating business-user feedback seamlessly</li>
+                <li>Employed Palantir Foundry to build AI agents, Ontology data infrastructure, and construct frontend solutions</li>
+                <li>Utilized AWS Step Functions, Glue, Lambda, and CloudWatch to orchestrate and troubleshoot data operations</li>
+                <li>Led initiatives to decommission unused AWS & Foundry resources</li>
               </ul>
             </div>
 
@@ -131,6 +133,7 @@ export default function Home() {
               </div>
               <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li>Enhanced existing dbt code to support ingestion of new volumes of data, using Git and GitHub for version control</li>
+                <li>Established a working relationship with business stakeholders to flesh out use-cases in Foundry</li>
                 <li>Wrote Python, SQL, and dbt code to modify and feed data into a PowerBI dashboard recurringly</li>
               </ul>
             </div>
@@ -145,8 +148,9 @@ export default function Home() {
                 <span className="text-slate-600">Jan 2025 – Apr 2025</span>
               </div>
               <ul className="list-disc list-inside space-y-2 text-slate-700">
-                <li>Established POCs for Copilot and Tableau Signature Training, optimizing the way end users learn Tableau</li>
                 <li>Created T.R.A.M. (Technical Resource Access Management), an internal Tableau usage analytics tool using TDEs, Python, and Streamlit</li>
+                <li>Presented regularly to senior leadership, providing updates on project progress and discussing business implications</li>
+                <li>Established POCs for Copilot and Tableau Signature Training, optimizing the way end users learn Tableau</li>
               </ul>
             </div>
 
@@ -226,7 +230,7 @@ export default function Home() {
                 </div>
                 <span className="text-slate-600">Jan 2026 – May 2027</span>
               </div>
-              <p className="text-slate-700">Relevant Coursework: Machine Learning, Human-Computer Interaction</p>
+              <p className="text-slate-700">GPA: 4.0 • Relevant Coursework: Machine Learning, Data Engineering, Human-Computer Interaction</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -262,8 +266,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold text-slate-900 mb-4">Let's Connect</h3>
           <p className="text-slate-700 mb-8 max-w-2xl mx-auto">
-            I'm always interested in hearing about new opportunities, collaborations, 
-            or just connecting with fellow data enthusiasts.
+            Interested in all things Computational Science, love hearing about new opportunities, 
+            collaborations, or just connecting with fellow data enthusiasts.
           </p>
           <div className="flex gap-4 justify-center">
             <a 
