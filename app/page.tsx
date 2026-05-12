@@ -37,25 +37,25 @@ const experience = [
     date: "Jan 2026 – Present",
     role: "Data Solutions Engineer",
     company: "Fortitude Re",
-    desc: "Built AI agents, Ontology data infrastructure, and frontend solutions on Palantir Foundry. Orchestrated data operations using AWS Step Functions, Glue, Lambda, and CloudWatch. Led initiatives to decommission unused compute resources.",
+    desc: "Built AI agents, Ontology data infrastructure, and frontend solutions on Palantir Foundry. One of a few primary developers supporting an agile-enabled workstream. ",
   },
   {
     date: "Jun 2025 – Aug 2025",
     role: "Data Engineering Intern",
     company: "Fortitude Re",
-    desc: "Enhanced dbt code to support new data volumes, collaborated with business stakeholders on Foundry use-cases, and built Python/SQL pipelines feeding a recurring PowerBI dashboard.",
+    desc: "Furthered company-wide adoption of Palantir Foundry, leading an initiative with select stakeholders to flesh out reporting processes in Foundry. Supported ongoing BAU involving AWS infrastructure, dbt, and SQL.",
   },
   {
     date: "Jan 2025 – Apr 2025",
     role: "Data Analytics Intern",
     company: "Nissan Motor Corporation",
-    desc: "Built T.R.A.M., an internal Tableau usage analytics tool using TDEs, Python, and Streamlit. Presented to senior leadership and established POCs for Copilot and Tableau Signature Training.",
+    desc: "Created T.R.A.M., an internal Tableau usage analytics tool using TDEs, Python, and Streamlit. Presented to senior leadership and established POCs for Copilot and Tableau Signature Training.",
   },
   {
     date: "Aug 2024 – May 2025",
     role: "Quantitative Research Intern",
     company: "Tennessee Small Business Development Centers (TSBDC)",
-    desc: "Conducted quantitative research through MTSU's BERC, focused on the availability of clinical services relating to mental health in Tennessee.",
+    desc: "Conducted quantitative research through MTSU's BERC, focusing on the availability of clinical services relating to mental health in Tennessee.",
   },
 ];
 
@@ -85,13 +85,14 @@ const education = [
     date: "Aug 2023 – Dec 2025",
     degree: "Bachelor of Science – Data Science",
     school: "Middle Tennessee State University",
-    details: "GPA: 3.9 (Summa Cum Laude)  ·  Steve & Kathy Anderson Data Science Scholarship",
+    details: "GPA: 3.9 (Summa Cum Laude)  ·  Steve & Kathy Anderson Data Science Scholarship Recipient  ·  Dean’s List (all semesters)  ·  Vice President, Data Science Club",
   },
 ];
 
 const certifications = [
+  { name: "Ontologize: Palantir Foundry & AIP for Developers", detail: "Issued Aug 2024" },
   { name: "AWS Certified Cloud Practitioner", detail: "Issued Jun 2023  ·  Expires Jun 2026" },
-  { name: "Ontologize: Palantir Foundry & AIP for Developers", detail: "Issued Aug 2024  ·  Expires Aug 2028" },
+  { name: "CITI Program: Social and Behavioral Research", detail: "Issued Aug 2024  ·  Expires Aug 2028" },
 ];
 
 const LINE = "border-l border-[#9db2bf]/40 dark:border-[#526d82]/50";
@@ -201,9 +202,9 @@ export default function Home() {
                   </p>
                   <p className="text-sm text-[#526d82] dark:text-[#9db2bf] leading-relaxed max-w-lg">
                     I specialize in data engineering, cloud solutions, and GenAI applications,
-                    currently building at Fortitude Re. My experience spans scalable data
-                    infrastructure and cutting-edge technologies—while on the side, pursuing
-                    a Master&apos;s in Computer Science at the University of Tennessee, Knoxville.
+                    currently building at Fortitude Re. On the side, I'm pursuing
+                    a Master&apos;s in Computer Science at the University of Tennessee, Knoxville,
+                    learning HCI, Machine Learning, and much more.
                   </p>
                 </div>
               </div>
@@ -249,7 +250,7 @@ export default function Home() {
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Projects</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
-                  Things I&apos;ve built outside of work.
+                  Things I&apos;ve built outside of work and school.
                 </p>
               </div>
               <div className="space-y-10">
