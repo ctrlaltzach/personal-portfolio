@@ -189,7 +189,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold text-[#27374d] dark:text-[#dde6ed] mb-1">
-                    Hey, I&apos;m Zach
+                    Zach Burgess
                   </h1>
                   <p className="text-base font-medium text-[#526d82] dark:text-[#9db2bf] mb-3">
                     Data Solutions Engineer
