@@ -37,25 +37,25 @@ const experience = [
     date: "Jan 2026 – Present",
     role: "Data Solutions Engineer",
     company: "Fortitude Re",
-    desc: "Built AI agents, Ontology data infrastructure, and frontend solutions on Palantir Foundry. Orchestrated data operations using AWS Step Functions, Glue, Lambda, and CloudWatch. Led initiatives to decommission unused compute resources.",
+    desc: "Built AI agents, Ontology data infrastructure, and frontend solutions on Palantir Foundry. One of a few primary developers supporting an agile-enabled workstream. ",
   },
   {
     date: "Jun 2025 – Aug 2025",
     role: "Data Engineering Intern",
     company: "Fortitude Re",
-    desc: "Enhanced dbt code to support new data volumes, collaborated with business stakeholders on Foundry use-cases, and built Python/SQL pipelines feeding a recurring PowerBI dashboard.",
+    desc: "Furthered company-wide adoption of Palantir Foundry, leading an initiative with select stakeholders to flesh out reporting processes in Foundry. Supported ongoing BAU involving AWS infrastructure, dbt, and SQL.",
   },
   {
     date: "Jan 2025 – Apr 2025",
     role: "Data Analytics Intern",
     company: "Nissan Motor Corporation",
-    desc: "Built T.R.A.M., an internal Tableau usage analytics tool using TDEs, Python, and Streamlit. Presented to senior leadership and established POCs for Copilot and Tableau Signature Training.",
+    desc: "Created T.R.A.M., an internal Tableau usage analytics tool using TDEs, Python, and Streamlit. Presented to senior leadership and established POCs for Copilot and Tableau Signature Training.",
   },
   {
     date: "Aug 2024 – May 2025",
     role: "Quantitative Research Intern",
     company: "Tennessee Small Business Development Centers (TSBDC)",
-    desc: "Conducted quantitative research through MTSU's BERC, focused on the availability of clinical services relating to mental health in Tennessee.",
+    desc: "Conducted quantitative research through MTSU's BERC, focusing on the availability of clinical services relating to mental health in Tennessee.",
   },
 ];
 
@@ -85,11 +85,12 @@ const education = [
     date: "Aug 2023 – Dec 2025",
     degree: "Bachelor of Science – Data Science",
     school: "Middle Tennessee State University",
-    details: "GPA: 3.9 (Summa Cum Laude)  ·  Steve & Kathy Anderson Data Science Scholarship",
+    details: "GPA: 3.9 (Summa Cum Laude)  ·  Steve & Kathy Anderson Data Science Scholarship Recipient  ·  Dean’s List (all semesters)  ·  Vice President, Data Science Club",
   },
 ];
 
 const certifications = [
+  { name: "Ontologize: Palantir Foundry & AIP for Developers", detail: "Issued Aug 2024" },
   { name: "AWS Certified Cloud Practitioner", detail: "Issued Jun 2023  ·  Expires Jun 2026" },
   { name: "CITI Program: Social and Behavioral Research", detail: "Issued Aug 2024  ·  Expires Aug 2028" },
 ];
@@ -151,7 +152,12 @@ export default function Home() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#2B2F37]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
         <div className="max-w-5xl mx-auto px-8 h-14 flex items-center justify-between">
-          <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
+          <div className="hidden md:flex justify-end w-[140px] pr-8">
+            <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
+              Zach Burgess
+            </span>
+          </div>
+          <span className="md:hidden text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
             Zach Burgess
           </span>
           <div className="flex items-center gap-6">
@@ -182,7 +188,7 @@ export default function Home() {
         <section id="about" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="01" name="About" />
-            <div className={`${LINE} pl-16 pt-14 pb-16 grow`}>
+            <div className={`${LINE} pl-16 pt-8 pb-16 grow`}>
               <div className="flex flex-col sm:flex-row gap-12 mb-8">
                 <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-[#9db2bf]/50 dark:border-[#526d82]">
                   <img src="/profile.jpg" alt="Zach Burgess" className="w-full h-full object-cover" />
@@ -196,9 +202,9 @@ export default function Home() {
                   </p>
                   <p className="text-sm text-[#526d82] dark:text-[#9db2bf] leading-relaxed max-w-lg">
                     I specialize in data engineering, cloud solutions, and GenAI applications,
-                    currently building at Fortitude Re. My experience spans scalable data
-                    infrastructure and cutting-edge technologies—while on the side, pursuing
-                    a Master&apos;s in Computer Science at the University of Tennessee, Knoxville.
+                    currently building at Fortitude Re. On the side, I'm pursuing
+                    a Master&apos;s in Computer Science at the University of Tennessee, Knoxville,
+                    learning HCI, Machine Learning, and much more.
                   </p>
                 </div>
               </div>
@@ -221,7 +227,7 @@ export default function Home() {
               <div className="space-y-10">
                 {experience.map(({ date, role, company, desc }) => (
                   <div key={role + date} className="grid grid-cols-[140px_1fr] gap-6">
-                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] leading-relaxed text-right pt-0.5">
+                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] text-right pt-0.5 whitespace-nowrap">
                       {date}
                     </p>
                     <div>
@@ -244,13 +250,13 @@ export default function Home() {
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Projects</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
-                  Things I&apos;ve built outside of work.
+                  Things I&apos;ve built outside of work and school.
                 </p>
               </div>
               <div className="space-y-10">
                 {projects.map(({ num, title, skills: projSkills, desc }) => (
                   <div key={num} className="grid grid-cols-[48px_1fr] gap-5">
-                    <span className="text-base font-bold text-[#9db2bf]/70 dark:text-[#526d82] pt-0.5">
+                    <span className="text-base font-bold text-[#9db2bf]/80 dark:text-[#526d82]/70 pt-0.5">
                       {num}
                     </span>
                     <div>
@@ -281,7 +287,7 @@ export default function Home() {
               <div className="space-y-10">
                 {education.map(({ date, degree, school, details }) => (
                   <div key={degree} className="grid grid-cols-[140px_1fr] gap-6">
-                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] leading-relaxed text-right pt-0.5">
+                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] text-right pt-0.5 whitespace-nowrap">
                       {date}
                     </p>
                     <div>
@@ -292,21 +298,19 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <div className="mt-10">
-                <p className="text-[10px] tracking-[0.2em] uppercase font-semibold text-[#9db2bf] dark:text-[#526d82]/80 mb-5">
+              <div className="mt-10 space-y-4">
+                <p className="text-[10px] tracking-[0.2em] uppercase font-semibold text-[#dde6ed]">
                   Certifications
                 </p>
-                <div className="space-y-4">
-                  {certifications.map(({ name, detail }) => (
-                    <div key={name} className="grid grid-cols-[140px_1fr] gap-6">
-                      <div />
-                      <div>
-                        <p className="text-sm font-medium text-[#27374d] dark:text-[#dde6ed]">{name}</p>
-                        <p className="text-sm text-[#9db2bf] dark:text-[#526d82]">{detail}</p>
-                      </div>
+                {certifications.map(({ name, detail }) => (
+                  <div key={name} className="grid grid-cols-[140px_1fr] gap-6">
+                    <div />
+                    <div>
+                      <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed]">{name}</h3>
+                      <p className="text-sm text-[#526d82] dark:text-[#9db2bf]">{detail}</p>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -320,8 +324,8 @@ export default function Home() {
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Contact</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
-                  Interested in all things computational science—open to opportunities,
-                  collaborations, or just connecting.
+                  Interested in all things computational science! Open to opportunities,
+                  events, or just connecting.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-start gap-10">
