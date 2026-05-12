@@ -146,10 +146,10 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#dde6ed] dark:bg-[#283544]">
+    <div className="min-h-screen bg-[#dde6ed] dark:bg-[#2B2F37]">
 
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#283544]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
+      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#2B2F37]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
         <div className="max-w-5xl mx-auto px-8 h-14 flex items-center justify-between">
           <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
             Zach Burgess
