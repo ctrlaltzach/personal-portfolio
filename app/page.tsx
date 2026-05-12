@@ -98,7 +98,7 @@ const LINE = "border-l border-[#9db2bf]/40 dark:border-[#526d82]/50";
 
 function SectionLabel({ num, name }: { num: string; name: string }) {
   return (
-    <div className="hidden md:flex flex-col items-end justify-start pr-8 pt-1 shrink-0 w-[200px]">
+    <div className="hidden md:flex flex-col items-end justify-start pr-8 pt-1 shrink-0 w-[140px]">
       <span className="text-[28px] font-bold leading-none text-[#9db2bf]/60 dark:text-[#526d82]">
         {num}
       </span>
@@ -146,11 +146,14 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#dde6ed] dark:bg-[#27374d]">
+    <div className="min-h-screen bg-[#dde6ed] dark:bg-[#1c2b3a]">
 
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#27374d]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
+      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#1c2b3a]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
         <div className="max-w-5xl mx-auto px-8 h-14 flex items-center justify-between">
+          <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
+            Zach Burgess
+          </span>
           <div className="flex items-center gap-6">
             {["About", "Experience", "Projects", "Education", "Contact"].map((item) => (
               <a
@@ -169,9 +172,6 @@ export default function Home() {
               {isDark ? <SunIcon /> : <MoonIcon />}
             </button>
           </div>
-          <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
-            Zach Burgess
-          </span>
         </div>
       </nav>
 
@@ -330,13 +330,13 @@ export default function Home() {
                   href="mailto:mz.burgess@outlook.com"
                   className="text-xl font-semibold tracking-tight hover:opacity-70 transition-opacity"
                 >
-                  <span className="text-[#526d82] dark:text-[#9db2bf]">mz</span>
+                  <span className="text-[#9db2bf]">mz</span>
                   <span className="text-[#27374d] dark:text-[#dde6ed]">[dot]</span>
-                  <span className="text-[#526d82] dark:text-[#9db2bf]">burgess</span>
+                  <span className="text-[#9db2bf]">burgess</span>
                   <span className="text-[#27374d] dark:text-[#dde6ed]">[at]</span>
-                  <span className="text-[#526d82] dark:text-[#9db2bf]">outlook</span>
+                  <span className="text-[#9db2bf]">outlook</span>
                   <span className="text-[#27374d] dark:text-[#dde6ed]">[dot]</span>
-                  <span className="text-[#526d82] dark:text-[#9db2bf]">com</span>
+                  <span className="text-[#9db2bf]">com</span>
                 </a>
                 {/* Numbered links */}
                 <div className="space-y-3">
@@ -367,7 +367,7 @@ export default function Home() {
       {/* Footer — line stops here */}
       <footer className="max-w-5xl mx-auto px-8 pb-10">
         <div className="md:flex">
-          <div className="hidden md:block w-[200px] shrink-0" />
+          <div className="hidden md:block w-[140px] shrink-0" />
           <div className="pl-10 md:pl-10">
             <p className="text-xs text-[#9db2bf] dark:text-[#526d82]">
               © 2026 Zach Burgess built with Next.js and Tailwind CSS
