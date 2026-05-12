@@ -99,10 +99,10 @@ const LINE = "border-l border-[#9db2bf]/40 dark:border-[#526d82]/50";
 function SectionLabel({ num, name }: { num: string; name: string }) {
   return (
     <div className="hidden md:flex flex-col items-end justify-start pr-8 pt-1 shrink-0 w-[140px]">
-      <span className="text-[28px] font-bold leading-none text-[#9db2bf]/60 dark:text-[#526d82]">
+      <span className="text-[28px] font-bold leading-none text-[#dde6ed]">
         {num}
       </span>
-      <span className="text-[10px] tracking-[0.2em] uppercase text-[#9db2bf] dark:text-[#526d82]/80 mt-1.5">
+      <span className="text-[10px] tracking-[0.2em] uppercase text-[#dde6ed] mt-1.5">
         {name}
       </span>
     </div>
@@ -146,10 +146,10 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#dde6ed] dark:bg-[#1c2b3a]">
+    <div className="min-h-screen bg-[#dde6ed] dark:bg-[#283544]">
 
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#1c2b3a]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
+      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#283544]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
         <div className="max-w-5xl mx-auto px-8 h-14 flex items-center justify-between">
           <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
             Zach Burgess
@@ -179,11 +179,11 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-8">
 
         {/* 01 – About */}
-        <section id="about">
+        <section id="about" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="01" name="About" />
             <div className={`${LINE} pl-16 pt-14 pb-16 grow`}>
-              <div className="flex flex-col sm:flex-row gap-8 mb-8">
+              <div className="flex flex-col sm:flex-row gap-12 mb-8">
                 <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-[#9db2bf]/50 dark:border-[#526d82]">
                   <img src="/profile.jpg" alt="Zach Burgess" className="w-full h-full object-cover" />
                 </div>
@@ -208,7 +208,7 @@ export default function Home() {
         </section>
 
         {/* 02 – Experience */}
-        <section id="experience">
+        <section id="experience" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="02" name="Experience" />
             <div className={`${LINE} pl-16 pb-16 grow`}>
@@ -237,7 +237,7 @@ export default function Home() {
         </section>
 
         {/* 03 – Projects */}
-        <section id="projects">
+        <section id="projects" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="03" name="Projects" />
             <div className={`${LINE} pl-16 pb-16 grow`}>
@@ -268,7 +268,7 @@ export default function Home() {
         </section>
 
         {/* 04 – Education */}
-        <section id="education">
+        <section id="education" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="04" name="Education" />
             <div className={`${LINE} pl-16 pb-16 grow`}>
@@ -313,7 +313,7 @@ export default function Home() {
         </section>
 
         {/* 05 – Contact */}
-        <section id="contact">
+        <section id="contact" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="05" name="Contact" />
             <div className={`${LINE} pl-16 pb-20 grow`}>
