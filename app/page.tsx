@@ -90,9 +90,9 @@ const education = [
 ];
 
 const certifications = [
-  { name: "Ontologize: Palantir Foundry & AIP for Developers", detail: "Issued Aug 2024" },
-  { name: "AWS Certified Cloud Practitioner", detail: "Issued Jun 2023  ·  Expires Jun 2026" },
+  { name: "AWS: Certified Cloud Practitioner", detail: "Issued Jun 2023  ·  Expires Jun 2026" },
   { name: "CITI Program: Social and Behavioral Research", detail: "Issued Aug 2024  ·  Expires Aug 2028" },
+  { name: "Ontologize: Palantir Foundry & AIP for Developers", detail: "Issued Aug 2024" },
 ];
 
 const LINE = "border-l border-[#9db2bf]/40 dark:border-[#526d82]/50";
