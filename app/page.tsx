@@ -151,7 +151,12 @@ export default function Home() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#2B2F37]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
         <div className="max-w-5xl mx-auto px-8 h-14 flex items-center justify-between">
-          <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
+          <div className="hidden md:flex justify-end w-[140px] pr-8">
+            <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
+              Zach Burgess
+            </span>
+          </div>
+          <span className="md:hidden text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
             Zach Burgess
           </span>
           <div className="flex items-center gap-6">
@@ -182,7 +187,7 @@ export default function Home() {
         <section id="about" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="01" name="About" />
-            <div className={`${LINE} pl-16 pt-14 pb-16 grow`}>
+            <div className={`${LINE} pl-16 pt-8 pb-16 grow`}>
               <div className="flex flex-col sm:flex-row gap-12 mb-8">
                 <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-[#9db2bf]/50 dark:border-[#526d82]">
                   <img src="/profile.jpg" alt="Zach Burgess" className="w-full h-full object-cover" />
@@ -221,7 +226,7 @@ export default function Home() {
               <div className="space-y-10">
                 {experience.map(({ date, role, company, desc }) => (
                   <div key={role + date} className="grid grid-cols-[140px_1fr] gap-6">
-                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] leading-relaxed text-right pt-0.5">
+                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] text-right pt-0.5 whitespace-nowrap">
                       {date}
                     </p>
                     <div>
@@ -250,7 +255,7 @@ export default function Home() {
               <div className="space-y-10">
                 {projects.map(({ num, title, skills: projSkills, desc }) => (
                   <div key={num} className="grid grid-cols-[48px_1fr] gap-5">
-                    <span className="text-base font-bold text-[#9db2bf]/70 dark:text-[#526d82] pt-0.5">
+                    <span className="text-base font-bold text-[#9db2bf]/80 dark:text-[#526d82]/70 pt-0.5">
                       {num}
                     </span>
                     <div>
@@ -281,7 +286,7 @@ export default function Home() {
               <div className="space-y-10">
                 {education.map(({ date, degree, school, details }) => (
                   <div key={degree} className="grid grid-cols-[140px_1fr] gap-6">
-                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] leading-relaxed text-right pt-0.5">
+                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] text-right pt-0.5 whitespace-nowrap">
                       {date}
                     </p>
                     <div>
@@ -292,21 +297,19 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <div className="mt-10">
-                <p className="text-[10px] tracking-[0.2em] uppercase font-semibold text-[#9db2bf] dark:text-[#526d82]/80 mb-5">
+              <div className="mt-10 space-y-4">
+                <p className="text-[10px] tracking-[0.2em] uppercase font-semibold text-[#dde6ed]">
                   Certifications
                 </p>
-                <div className="space-y-4">
-                  {certifications.map(({ name, detail }) => (
-                    <div key={name} className="grid grid-cols-[140px_1fr] gap-6">
-                      <div />
-                      <div>
-                        <p className="text-sm font-medium text-[#27374d] dark:text-[#dde6ed]">{name}</p>
-                        <p className="text-sm text-[#9db2bf] dark:text-[#526d82]">{detail}</p>
-                      </div>
+                {certifications.map(({ name, detail }) => (
+                  <div key={name} className="grid grid-cols-[140px_1fr] gap-6">
+                    <div />
+                    <div>
+                      <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed]">{name}</h3>
+                      <p className="text-sm text-[#526d82] dark:text-[#9db2bf]">{detail}</p>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
