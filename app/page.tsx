@@ -111,14 +111,14 @@ function SectionLabel({ num, name }: { num: string; name: string }) {
 
 function TagList({ tags }: { tags: string[] }) {
   return (
-    <div className="flex flex-wrap gap-x-1 gap-y-1.5 items-center">
+    <div className="flex flex-wrap gap-x-2 gap-y-2 items-center">
       {tags.map((tag, i) => (
-        <span key={tag} className="flex items-center gap-1">
-          <span className="px-2.5 py-0.5 text-xs rounded-full border border-[#9db2bf]/50 dark:border-[#526d82]/60 text-[#526d82] dark:text-[#9db2bf] bg-[#9db2bf]/10 dark:bg-[#526d82]/10">
+        <span key={tag} className="flex items-center gap-2">
+          <span className="px-3.5 py-1 text-sm rounded-full border border-[#9db2bf]/50 dark:border-[#526d82]/60 text-[#526d82] dark:text-[#9db2bf] bg-[#9db2bf]/10 dark:bg-[#526d82]/10">
             {tag}
           </span>
           {i < tags.length - 1 && (
-            <span className="text-[#9db2bf]/60 dark:text-[#526d82]/60 text-xs select-none">·</span>
+            <span className="text-[#9db2bf]/60 dark:text-[#526d82]/60 text-sm select-none">·</span>
           )}
         </span>
       ))}
@@ -182,7 +182,7 @@ export default function Home() {
         <section id="about">
           <div className="md:flex">
             <SectionLabel num="01" name="About" />
-            <div className={`${LINE} pl-10 pt-14 pb-16 grow`}>
+            <div className={`${LINE} pl-16 pt-14 pb-16 grow`}>
               <div className="flex flex-col sm:flex-row gap-8 mb-8">
                 <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-[#9db2bf]/50 dark:border-[#526d82]">
                   <img src="/profile.jpg" alt="Zach Burgess" className="w-full h-full object-cover" />
@@ -211,7 +211,7 @@ export default function Home() {
         <section id="experience">
           <div className="md:flex">
             <SectionLabel num="02" name="Experience" />
-            <div className={`${LINE} pl-10 pb-16 grow`}>
+            <div className={`${LINE} pl-16 pb-16 grow`}>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Experience</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
@@ -220,14 +220,14 @@ export default function Home() {
               </div>
               <div className="space-y-10">
                 {experience.map(({ date, role, company, desc }) => (
-                  <div key={role + date} className="grid grid-cols-[120px_1fr] gap-5">
-                    <p className="text-xs text-[#9db2bf] dark:text-[#526d82] leading-relaxed text-right pt-0.5">
+                  <div key={role + date} className="grid grid-cols-[140px_1fr] gap-6">
+                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] leading-relaxed text-right pt-0.5">
                       {date}
                     </p>
                     <div>
-                      <h3 className="text-sm font-semibold text-[#27374d] dark:text-[#dde6ed]">{role}</h3>
-                      <p className="text-xs text-[#526d82] dark:text-[#9db2bf] mb-2">{company}</p>
-                      <p className="text-xs text-[#526d82]/80 dark:text-[#9db2bf]/80 leading-relaxed">{desc}</p>
+                      <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed]">{role}</h3>
+                      <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mb-2">{company}</p>
+                      <p className="text-sm text-[#526d82]/80 dark:text-[#9db2bf]/80 leading-relaxed">{desc}</p>
                     </div>
                   </div>
                 ))}
@@ -240,7 +240,7 @@ export default function Home() {
         <section id="projects">
           <div className="md:flex">
             <SectionLabel num="03" name="Projects" />
-            <div className={`${LINE} pl-10 pb-16 grow`}>
+            <div className={`${LINE} pl-16 pb-16 grow`}>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Projects</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
@@ -249,16 +249,16 @@ export default function Home() {
               </div>
               <div className="space-y-10">
                 {projects.map(({ num, title, skills: projSkills, desc }) => (
-                  <div key={num} className="grid grid-cols-[40px_1fr] gap-4">
-                    <span className="text-sm font-bold text-[#9db2bf]/70 dark:text-[#526d82] pt-0.5">
+                  <div key={num} className="grid grid-cols-[48px_1fr] gap-5">
+                    <span className="text-base font-bold text-[#9db2bf]/70 dark:text-[#526d82] pt-0.5">
                       {num}
                     </span>
                     <div>
-                      <div className="mb-2">
+                      <div className="mb-3">
                         <TagList tags={projSkills} />
                       </div>
-                      <h3 className="text-sm font-semibold text-[#27374d] dark:text-[#dde6ed] mb-1">{title}</h3>
-                      <p className="text-xs text-[#526d82]/80 dark:text-[#9db2bf]/80 leading-relaxed">{desc}</p>
+                      <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed] mb-1">{title}</h3>
+                      <p className="text-sm text-[#526d82]/80 dark:text-[#9db2bf]/80 leading-relaxed">{desc}</p>
                     </div>
                   </div>
                 ))}
@@ -271,7 +271,7 @@ export default function Home() {
         <section id="education">
           <div className="md:flex">
             <SectionLabel num="04" name="Education" />
-            <div className={`${LINE} pl-10 pb-16 grow`}>
+            <div className={`${LINE} pl-16 pb-16 grow`}>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Education</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
@@ -280,14 +280,14 @@ export default function Home() {
               </div>
               <div className="space-y-10">
                 {education.map(({ date, degree, school, details }) => (
-                  <div key={degree} className="grid grid-cols-[120px_1fr] gap-5">
-                    <p className="text-xs text-[#9db2bf] dark:text-[#526d82] leading-relaxed text-right pt-0.5">
+                  <div key={degree} className="grid grid-cols-[140px_1fr] gap-6">
+                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] leading-relaxed text-right pt-0.5">
                       {date}
                     </p>
                     <div>
-                      <h3 className="text-sm font-semibold text-[#27374d] dark:text-[#dde6ed]">{degree}</h3>
-                      <p className="text-xs text-[#526d82] dark:text-[#9db2bf] mb-1">{school}</p>
-                      <p className="text-xs text-[#526d82]/80 dark:text-[#9db2bf]/80 leading-relaxed">{details}</p>
+                      <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed]">{degree}</h3>
+                      <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mb-1">{school}</p>
+                      <p className="text-sm text-[#526d82]/80 dark:text-[#9db2bf]/80 leading-relaxed">{details}</p>
                     </div>
                   </div>
                 ))}
@@ -298,11 +298,11 @@ export default function Home() {
                 </p>
                 <div className="space-y-4">
                   {certifications.map(({ name, detail }) => (
-                    <div key={name} className="grid grid-cols-[120px_1fr] gap-5">
+                    <div key={name} className="grid grid-cols-[140px_1fr] gap-6">
                       <div />
                       <div>
-                        <p className="text-xs font-medium text-[#27374d] dark:text-[#dde6ed]">{name}</p>
-                        <p className="text-xs text-[#9db2bf] dark:text-[#526d82]">{detail}</p>
+                        <p className="text-sm font-medium text-[#27374d] dark:text-[#dde6ed]">{name}</p>
+                        <p className="text-sm text-[#9db2bf] dark:text-[#526d82]">{detail}</p>
                       </div>
                     </div>
                   ))}
@@ -316,7 +316,7 @@ export default function Home() {
         <section id="contact">
           <div className="md:flex">
             <SectionLabel num="05" name="Contact" />
-            <div className={`${LINE} pl-10 pb-20 grow`}>
+            <div className={`${LINE} pl-16 pb-20 grow`}>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Contact</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
@@ -368,7 +368,7 @@ export default function Home() {
       <footer className="max-w-5xl mx-auto px-8 pb-10">
         <div className="md:flex">
           <div className="hidden md:block w-[140px] shrink-0" />
-          <div className="pl-10 md:pl-10">
+          <div className="pl-16 md:pl-16">
             <p className="text-xs text-[#9db2bf] dark:text-[#526d82]">
               © 2026 Zach Burgess built with Next.js and Tailwind CSS
             </p>
