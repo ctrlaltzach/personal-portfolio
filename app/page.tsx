@@ -91,7 +91,7 @@ const education = [
 
 const certifications = [
   { name: "AWS Certified Cloud Practitioner", detail: "Issued Jun 2023  ·  Expires Jun 2026" },
-  { name: "CITI Program: Social and Behavioral Research", detail: "Issued Aug 2024  ·  Expires Aug 2028" },
+  { name: "Ontologize: Palantir Foundry & AIP for Developers", detail: "Issued Aug 2024  ·  Expires Aug 2028" },
 ];
 
 const LINE = "border-l border-[#9db2bf]/40 dark:border-[#526d82]/50";
@@ -323,8 +323,8 @@ export default function Home() {
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Contact</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
-                  Interested in all things computational science—open to opportunities,
-                  collaborations, or just connecting.
+                  Interested in all things computational science! Open to opportunities,
+                  events, or just connecting.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-start gap-10">
