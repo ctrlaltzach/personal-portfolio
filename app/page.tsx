@@ -152,6 +152,13 @@ export default function Home() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#2B2F37]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
         <div className="max-w-5xl mx-auto px-8 h-14 flex items-center justify-between">
+          <button
+            onClick={toggleDark}
+            className="md:hidden text-[#526d82] dark:text-[#9db2bf] hover:text-[#27374d] dark:hover:text-[#dde6ed] transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? <SunIcon /> : <MoonIcon />}
+          </button>
           <div className="hidden md:flex justify-end w-[140px] pr-8">
             <span className="text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
               Zach Burgess
@@ -160,7 +167,7 @@ export default function Home() {
           <span className="md:hidden text-[10px] tracking-[0.25em] uppercase font-semibold text-[#526d82] dark:text-[#9db2bf]">
             Zach Burgess
           </span>
-          <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6">
             {["About", "Experience", "Projects", "Education", "Contact"].map((item) => (
               <a
                 key={item}
@@ -188,7 +195,7 @@ export default function Home() {
         <section id="about" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="01" name="About" />
-            <div className={`${LINE} pl-16 pt-8 pb-16 grow`}>
+            <div className={`${LINE} line-mobile-hidden md:pl-16 pt-8 pb-16 grow`}>
               <div className="flex flex-col sm:flex-row gap-12 mb-8">
                 <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-[#9db2bf]/50 dark:border-[#526d82]">
                   <img src="/profile.jpg" alt="Zach Burgess" className="w-full h-full object-cover" />
@@ -217,7 +224,7 @@ export default function Home() {
         <section id="experience" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="02" name="Experience" />
-            <div className={`${LINE} pl-16 pb-16 grow`}>
+            <div className={`${LINE} line-mobile-hidden md:pl-16 pb-16 grow`}>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Experience</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
@@ -226,8 +233,8 @@ export default function Home() {
               </div>
               <div className="space-y-10">
                 {experience.map(({ date, role, company, desc }) => (
-                  <div key={role + date} className="grid grid-cols-[140px_1fr] gap-6">
-                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] text-right pt-0.5 whitespace-nowrap">
+                  <div key={role + date} className="grid md:grid-cols-[140px_1fr] gap-2 md:gap-6">
+                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] md:text-right pt-0.5 whitespace-nowrap">
                       {date}
                     </p>
                     <div>
@@ -246,7 +253,7 @@ export default function Home() {
         <section id="projects" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="03" name="Projects" />
-            <div className={`${LINE} pl-16 pb-16 grow`}>
+            <div className={`${LINE} line-mobile-hidden md:pl-16 pb-16 grow`}>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Projects</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
@@ -255,7 +262,7 @@ export default function Home() {
               </div>
               <div className="space-y-10">
                 {projects.map(({ num, title, skills: projSkills, desc }) => (
-                  <div key={num} className="grid grid-cols-[48px_1fr] gap-5">
+                  <div key={num} className="grid md:grid-cols-[48px_1fr] gap-2 md:gap-5">
                     <span className="text-base font-bold text-[#9db2bf]/80 dark:text-[#526d82]/70 pt-0.5">
                       {num}
                     </span>
@@ -277,7 +284,7 @@ export default function Home() {
         <section id="education" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="04" name="Education" />
-            <div className={`${LINE} pl-16 pb-16 grow`}>
+            <div className={`${LINE} line-mobile-hidden md:pl-16 pb-16 grow`}>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Education</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
@@ -286,12 +293,22 @@ export default function Home() {
               </div>
               <div className="space-y-10">
                 {education.map(({ date, degree, school, details }) => (
-                  <div key={degree} className="grid grid-cols-[140px_1fr] gap-6">
-                    <p className="text-sm text-[#9db2bf] dark:text-[#526d82] text-right pt-0.5 whitespace-nowrap">
+                  <div key={degree} className="md:grid md:grid-cols-[140px_1fr] md:gap-6">
+                    <div className="md:hidden mb-1">
+                      <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed]">{degree}</h3>
+                      <p className="text-sm text-[#9db2bf] dark:text-[#526d82] whitespace-nowrap">
+                        {date}
+                      </p>
+                    </div>
+                    <p className="hidden md:block text-sm text-[#9db2bf] dark:text-[#526d82] md:text-right pt-0.5 whitespace-nowrap">
                       {date}
                     </p>
-                    <div>
+                    <div className="hidden md:block">
                       <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed]">{degree}</h3>
+                      <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mb-1">{school}</p>
+                      <p className="text-sm text-[#526d82]/80 dark:text-[#9db2bf]/80 leading-relaxed">{details}</p>
+                    </div>
+                    <div className="md:hidden">
                       <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mb-1">{school}</p>
                       <p className="text-sm text-[#526d82]/80 dark:text-[#9db2bf]/80 leading-relaxed">{details}</p>
                     </div>
@@ -303,8 +320,8 @@ export default function Home() {
                   Certifications
                 </p>
                 {certifications.map(({ name, detail }) => (
-                  <div key={name} className="grid grid-cols-[140px_1fr] gap-6">
-                    <div />
+                  <div key={name} className="md:grid md:grid-cols-[140px_1fr] md:gap-6">
+                    <div className="hidden md:block" />
                     <div>
                       <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed]">{name}</h3>
                       <p className="text-sm text-[#526d82] dark:text-[#9db2bf]">{detail}</p>
@@ -320,7 +337,7 @@ export default function Home() {
         <section id="contact" className="scroll-mt-20">
           <div className="md:flex">
             <SectionLabel num="05" name="Contact" />
-            <div className={`${LINE} pl-16 pb-20 grow`}>
+            <div className={`${LINE} line-mobile-hidden md:pl-16 pb-20 grow`}>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-[#27374d] dark:text-[#dde6ed]">Contact</h2>
                 <p className="text-sm text-[#526d82] dark:text-[#9db2bf] mt-1">
@@ -332,7 +349,7 @@ export default function Home() {
                 {/* Styled email */}
                 <a
                   href="mailto:mz.burgess@outlook.com"
-                  className="text-xl font-semibold tracking-tight hover:opacity-70 transition-opacity"
+                  className="text-sm sm:text-xl font-semibold tracking-tight hover:opacity-70 transition-opacity"
                 >
                   <span className="text-[#9db2bf]">mz</span>
                   <span className="text-[#27374d] dark:text-[#dde6ed]">[dot]</span>
@@ -372,7 +389,7 @@ export default function Home() {
       <footer className="max-w-5xl mx-auto px-8 pb-10">
         <div className="md:flex">
           <div className="hidden md:block w-[140px] shrink-0" />
-          <div className="pl-16 md:pl-16">
+          <div className="md:pl-16">
             <p className="text-xs text-[#9db2bf] dark:text-[#526d82]">
               © 2026 Zach Burgess built with Next.js and Tailwind CSS
             </p>
