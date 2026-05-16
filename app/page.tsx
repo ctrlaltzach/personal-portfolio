@@ -129,7 +129,7 @@ function TagList({ tags }: { tags: string[] }) {
 
 export default function Home() {
   const [isDark, setIsDark] = useState(true);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     setIsDark(document.documentElement.classList.contains("dark"));
