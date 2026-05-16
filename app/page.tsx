@@ -144,32 +144,50 @@ export default function Home() {
     const draw = () => {
       const isDark = document.documentElement.classList.contains("dark");
 
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      // Create grid lines
+      let linesHTML = '';
+
       if (isDark) {
-        svg.style.display = "block";
-
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-
-        // Create grid lines
-        let linesHTML = '';
+        // Dark mode: very subtle grey grid on black background
+        const bgColor = "#000000";
+        const lineColor = "#1a1a1a";
 
         // Vertical lines
         for (let x = 0; x <= width; x += gridSize) {
-          linesHTML += `<line x1="${x}" y1="0" x2="${x}" y2="${height}" stroke="#333333" stroke-width="1"/>`;
+          linesHTML += `<line x1="${x}" y1="0" x2="${x}" y2="${height}" stroke="${lineColor}" stroke-width="1"/>`;
         }
 
         // Horizontal lines
         for (let y = 0; y <= height; y += gridSize) {
-          linesHTML += `<line x1="0" y1="${y}" x2="${width}" y2="${y}" stroke="#333333" stroke-width="1"/>`;
+          linesHTML += `<line x1="0" y1="${y}" x2="${width}" y2="${y}" stroke="${lineColor}" stroke-width="1"/>`;
         }
 
-        svg.innerHTML = `<rect width="100%" height="100%" fill="#000000"/>${linesHTML}`;
-        svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-        svg.setAttribute('width', width.toString());
-        svg.setAttribute('height', height.toString());
+        svg.innerHTML = `<rect width="100%" height="100%" fill="${bgColor}"/>${linesHTML}`;
       } else {
-        svg.style.display = "none";
+        // Light mode: subtle grid on light background
+        const bgColor = "#dde6ed";
+        const lineColor = "#d0d8e0";
+
+        // Vertical lines
+        for (let x = 0; x <= width; x += gridSize) {
+          linesHTML += `<line x1="${x}" y1="0" x2="${x}" y2="${height}" stroke="${lineColor}" stroke-width="1"/>`;
+        }
+
+        // Horizontal lines
+        for (let y = 0; y <= height; y += gridSize) {
+          linesHTML += `<line x1="0" y1="${y}" x2="${width}" y2="${y}" stroke="${lineColor}" stroke-width="1"/>`;
+        }
+
+        svg.innerHTML = `<rect width="100%" height="100%" fill="${bgColor}"/>${linesHTML}`;
       }
+
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+      svg.setAttribute('width', width.toString());
+      svg.setAttribute('height', height.toString());
+      svg.style.display = "block";
     };
 
     draw();
@@ -199,14 +217,14 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#dde6ed] dark:bg-black">
+    <div className="min-h-screen bg-transparent">
       <svg
         ref={canvasRef}
-        className="fixed inset-0 -z-10 hidden dark:block"
+        className="fixed inset-0 -z-10 pointer-events-none"
       />
 
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-black/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#333]/30">
+      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-black/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#333]/30 relative">
         <div className="max-w-5xl mx-auto px-8 h-14 flex items-center justify-between">
           <button
             onClick={toggleDark}
@@ -245,7 +263,7 @@ export default function Home() {
       </nav>
 
       {/* Page content */}
-      <div className="max-w-5xl mx-auto px-8">
+      <div className="max-w-5xl mx-auto px-8 relative z-10">
 
         {/* 01 – About */}
         <section id="about" className="scroll-mt-20">
