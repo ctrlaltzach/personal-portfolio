@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function MoonIcon() {
   return (
@@ -100,10 +100,10 @@ const LINE = "border-l border-[#9db2bf]/40 dark:border-[#526d82]/50";
 function SectionLabel({ num, name }: { num: string; name: string }) {
   return (
     <div className="hidden md:flex flex-col items-end justify-start pr-8 pt-1 shrink-0 w-[140px]">
-      <span className="text-[28px] font-bold leading-none text-[#dde6ed]">
+      <span className="text-[28px] font-bold leading-none text-[#526d82] dark:text-[#dde6ed]">
         {num}
       </span>
-      <span className="text-[10px] tracking-[0.2em] uppercase text-[#dde6ed] mt-1.5">
+      <span className="text-[10px] tracking-[0.2em] uppercase text-[#526d82] dark:text-[#dde6ed] mt-1.5">
         {name}
       </span>
     </div>
@@ -129,9 +129,61 @@ function TagList({ tags }: { tags: string[] }) {
 
 export default function Home() {
   const [isDark, setIsDark] = useState(true);
+  const canvasRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  useEffect(() => {
+    const svg = canvasRef.current;
+    if (!svg) return;
+
+    const gridSize = 30;
+
+    const draw = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+
+      if (isDark) {
+        svg.style.display = "block";
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        // Create grid lines
+        let linesHTML = '';
+
+        // Vertical lines
+        for (let x = 0; x <= width; x += gridSize) {
+          linesHTML += `<line x1="${x}" y1="0" x2="${x}" y2="${height}" stroke="#333333" stroke-width="1"/>`;
+        }
+
+        // Horizontal lines
+        for (let y = 0; y <= height; y += gridSize) {
+          linesHTML += `<line x1="0" y1="${y}" x2="${width}" y2="${y}" stroke="#333333" stroke-width="1"/>`;
+        }
+
+        svg.innerHTML = `<rect width="100%" height="100%" fill="#000000"/>${linesHTML}`;
+        svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+        svg.setAttribute('width', width.toString());
+        svg.setAttribute('height', height.toString());
+      } else {
+        svg.style.display = "none";
+      }
+    };
+
+    draw();
+    const resizeHandler = () => draw();
+    window.addEventListener("resize", resizeHandler);
+
+    // Redraw when theme changes
+    const observer = new MutationObserver(() => draw());
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+      observer.disconnect();
+    };
   }, []);
 
   function toggleDark() {
@@ -147,10 +199,14 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#dde6ed] dark:bg-[#2B2F37]">
+    <div className="min-h-screen bg-[#dde6ed] dark:bg-black">
+      <svg
+        ref={canvasRef}
+        className="fixed inset-0 -z-10 hidden dark:block"
+      />
 
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-[#2B2F37]/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#526d82]/30">
+      <nav className="sticky top-0 z-50 bg-[#dde6ed]/95 dark:bg-black/95 backdrop-blur-sm border-b border-[#9db2bf]/30 dark:border-[#333]/30">
         <div className="max-w-5xl mx-auto px-8 h-14 flex items-center justify-between">
           <button
             onClick={toggleDark}
