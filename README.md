@@ -1,65 +1,33 @@
-# Michael (Zach) Burgess - Personal Portfolio
+# Personal Portfolio
 
-A professional portfolio website showcasing my experience as a Data Engineer, built with modern web technologies.
+My professional portfolio showcasing education, projects, and experience in data engineering, analytics, cloud solutions, and more.
 
-## 🚀 Live Site
+## Tech Stack
 
-[View Portfolio](https://personal-portfolio-zach-burgess-projects.vercel.app?_vercel_share=oNRkQEozZks2KlgMb9yKgC6sJOIdq2vj)
+- Next.js 16 with App Router
+- Tailwind CSS
+- TypeScript
+- Hosted in Vercel
 
-## 💻 Tech Stack
+## Features
 
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS
-- **Language:** JavaScript/TypeScript
-- **Hosting:** Vercel
-- **Version Control:** Git & GitHub
+- Fully responsive (mobile & desktop)
+- Dark / Light mode
+- Smooth scroll navigation
+- Experience, projects, education, and certifications sections
+- Direct contact links (email, GitHub, LinkedIn)
 
-## 📋 Features
+## Getting Started
 
-- Responsive design optimized for mobile and desktop
-- Clean, professional UI with smooth scrolling navigation
-- Sections for experience, projects, education, and certifications
-- Direct links to LinkedIn, GitHub, and email contact
-
-## 🛠️ Local Development
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ctrlaltzach/personal-portfolio.git
-   cd personal-portfolio
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## 📁 Project Structure
-
-```
-personal-portfolio/
-├── app/
-│   ├── page.js          # Main portfolio page
-│   └── layout.js        # Root layout
-├── public/
-│   └── profile.jpg      # Profile photo
-├── package.json
-└── README.md
+```bash
+npm install
+npm run dev
 ```
 
-## 📬 Contact
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Contact
 
 - **Email:** mz.burgess@outlook.com
-- **LinkedIn:** [linkedin.com/in/zach-b-7aaa9826b](https://www.linkedin.com/in/zach-b-7aaa9826b/)
-- **GitHub:** [github.com/ctrlaltzach](https://github.com/ctrlaltzach)
-
----
-
-Built with Next.js and Tailwind CSS | © 2026 Michael Z. Burgess
+- **LinkedIn:** [in/zach-b-7aaa9826b](https://www.linkedin.com/in/zach-b-7aaa9826b/)
+- **GitHub:** [ctrlaltzach](https://github.com/ctrlaltzach)
