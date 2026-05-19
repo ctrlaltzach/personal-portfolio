@@ -90,16 +90,17 @@ const education = [
 ];
 
 const certifications = [
-  { name: "AWS: Certified Cloud Practitioner", detail: "Issued Jun 2023  ·  Expires Jun 2026" },
-  { name: "CITI Program: Social and Behavioral Research", detail: "Issued Aug 2024  ·  Expires Aug 2028" },
-  { name: "Ontologize: Palantir Foundry & AIP for Developers", detail: "Issued Aug 2024" },
+  { issuer: "AWS", name: "Certified Cloud Practitioner", date: "Issued Jun 2023  ·  Expires Jun 2026" },
+  { issuer: "Anthropic", name: "Model Context Protocol: Advanced Topics", date: "Issued May 2026" },
+  { issuer: "CITI Program", name: "Social and Behavioral Research", date: "Issued Aug 2024  ·  Expires Aug 2028" },
+  { issuer: "Ontologize", name: "Palantir Foundry & AIP for Developers", date: "Issued Aug 2024" },
 ];
 
 const LINE = "border-l border-[#9db2bf]/40 dark:border-[#526d82]/50";
 
 function SectionLabel({ num, name }: { num: string; name: string }) {
   return (
-    <div className="hidden md:flex flex-col items-end justify-start pr-8 pt-1 shrink-0 w-[140px]">
+    <div className="hidden md:flex flex-col items-end justify-start pr-8 pt-1 shrink-0 w-[135px]">
       <span className="text-[28px] font-bold leading-none text-[#526d82] dark:text-[#dde6ed]">
         {num}
       </span>
@@ -389,19 +390,19 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <div className="mt-10 space-y-4">
-                <p className="text-[10px] tracking-[0.2em] uppercase font-semibold text-[#dde6ed]">
+              <div className="mt-10 pb-3">
+                <p className="text-sm tracking-[0.15em] uppercase font-semibold text-[#526d82] dark:text-[#dde6ed] mb-8">
                   Certifications
                 </p>
-                {certifications.map(({ name, detail }) => (
-                  <div key={name} className="md:grid md:grid-cols-[140px_1fr] md:gap-6">
-                    <div className="hidden md:block" />
-                    <div>
-                      <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed]">{name}</h3>
-                      <p className="text-sm text-[#526d82] dark:text-[#9db2bf]">{detail}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                  {certifications.map(({ issuer, name, date }) => (
+                    <div key={name}>
+                      <p className="text-sm font-medium text-[#526d82] dark:text-[#9db2bf] mb-1">{issuer}</p>
+                      <h3 className="text-base font-semibold text-[#27374d] dark:text-[#dde6ed] mb-2">{name}</h3>
+                      <p className="text-sm text-[#526d82] dark:text-[#9db2bf]">{date}</p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
