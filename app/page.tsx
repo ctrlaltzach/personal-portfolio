@@ -279,6 +279,7 @@ export default function Home() {
                   <h1 className="text-4xl font-bold text-[#27374d] dark:text-[#dde6ed] mb-1">
                     Zach Burgess
                   </h1>
+                  <p className="text-base font-medium text-[#526d82] dark:text-[#9db2bf] mb-3">
                     Data Solutions Engineer
                   </p>
                   <p className="text-sm text-[#526d82] dark:text-[#9db2bf] leading-relaxed max-w-lg">
