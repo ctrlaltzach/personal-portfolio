@@ -43,7 +43,7 @@ const experience = [
     date: "Jun 2025 – Aug 2025",
     role: "Data Engineering Intern",
     company: "Fortitude Re",
-    desc: "Furthered company-wide adoption of Palantir Foundry, leading an initiative with select stakeholders to flesh out reporting processes in Foundry. Supported ongoing BAU involving AWS infrastructure, dbt, and SQL.",
+    desc: "Led an initiative with select stakeholders to flesh out reporting processes in Palantir Foundry. Supported ongoing BAU involving AWS infrastructure, dbt, and SQL.",
   },
   {
     date: "Jan 2025 – Apr 2025",
@@ -93,7 +93,7 @@ const certifications = [
   { issuer: "AWS", name: "Certified Cloud Practitioner", date: "Issued Jun 2023  ·  Expires Jun 2026" },
   { issuer: "Anthropic", name: "Model Context Protocol: Advanced Topics", date: "Issued May 2026" },
   { issuer: "CITI Program", name: "Social and Behavioral Research", date: "Issued Aug 2024  ·  Expires Aug 2028" },
-  { issuer: "Ontologize", name: "Palantir Foundry & AIP for Developers", date: "Issued Aug 2024" },
+  { issuer: "Ontologize", name: "Palantir Foundry & AIP for Developers", date: "Issued Feb 2026" },
 ];
 
 const LINE = "border-l border-[#9db2bf]/40 dark:border-[#526d82]/50";
@@ -279,12 +279,10 @@ export default function Home() {
                   <h1 className="text-4xl font-bold text-[#27374d] dark:text-[#dde6ed] mb-1">
                     Zach Burgess
                   </h1>
-                  <p className="text-base font-medium text-[#526d82] dark:text-[#9db2bf] mb-3">
                     Data Solutions Engineer
                   </p>
                   <p className="text-sm text-[#526d82] dark:text-[#9db2bf] leading-relaxed max-w-lg">
-                    I specialize in data engineering, cloud solutions, and GenAI applications,
-                    currently building at Fortitude Re. On the side, I'm pursuing
+                    Currently building at Fortitude Re. On the side, I'm pursuing
                     a Master&apos;s in Computer Science at the University of Tennessee, Knoxville,
                     learning HCI, Machine Learning, and much more.
                   </p>
